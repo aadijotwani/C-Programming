@@ -30,7 +30,7 @@ int main(){
         scanf("%d", &choice);
     }
 
-    //Traversing
+    //Traversing 
     temp = head;
     while(temp != NULL){
         printf("%d -> ", temp->data);

@@ -36,8 +36,8 @@ int main(){
         scanf("%d", &choice);
     }
 
-    // del_begin(head);
-    // del_end(head);
+    del_begin(head);
+    del_end(head);
     del_pos(head);
     display(head);
 

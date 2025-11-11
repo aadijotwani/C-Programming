@@ -6,16 +6,16 @@ struct node{
     struct node *next;
 };
 
-void Reverse(struct node **head);
+void display(struct node *head);
 
 int main(){
-    struct node *head=NULL, *newNode, *temp;
+    struct node *head = NULL, *newNode, *temp;
     int choice = 1;
 
     while(choice){
         newNode = (struct node*)malloc(sizeof(struct node));
 
-        printf("Enter Data: ");
+        printf("Please enter the data: ");
         scanf("%d", &newNode->data);
 
         newNode->next = NULL;
@@ -28,32 +28,24 @@ int main(){
             temp = newNode;
         }
 
-        printf("Want to add more? (0/1): ");
+        printf("Add another node? ");
         scanf("%d", &choice);
     }
+    
+    display(head);
 
-    Reverse(&head);  
     return 0;
 }
 
-void Reverse(struct node **head){
-    struct node *temp, *prev = NULL, *Upcoming;
 
-    temp = *head;
+void display(struct node *head){
+    struct node *temp;
+
+    temp = head;
     while(temp != NULL){
-        Upcoming = temp->next;
-        temp->next = prev;
-        prev = temp;
-        temp = Upcoming;
-    }
-    *head = prev;
-
-
-    //DISPLAY
-    temp = *head;
-    while(temp!=NULL){
-        printf("%d -> ", temp->data);
+        printf("data -> %d  ", temp->data);
         temp = temp->next;
     }
     printf("NULL");
 }
+

@@ -99,7 +99,6 @@ void NodeCount(struct node **head)
 
 void Insert_at_Beginning(struct node **head)
 {
-
     struct node *newNode;
 
     newNode = (struct node *)malloc(sizeof(struct node));
