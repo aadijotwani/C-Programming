@@ -40,10 +40,10 @@ int main()
         scanf("%d", &choice);
     }
     display(head);
-    // del_Start(&head);
-    // display(head);
-    // del_End(head);
-    // display(head);
+    del_Start(&head);
+    display(head);
+    del_End(head);
+    display(head);
     del_Pos(&head);
     display(head);
     return 0;

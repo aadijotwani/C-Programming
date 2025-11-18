@@ -105,6 +105,7 @@ void Insert_at_Beginning(struct node **head)
     printf("Please enter the data: ");
     scanf("%d", &newNode->data);
 
+
     if (*head == NULL)
     {
         newNode->next = newNode;
