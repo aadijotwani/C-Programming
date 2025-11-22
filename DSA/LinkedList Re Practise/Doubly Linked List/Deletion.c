@@ -10,6 +10,7 @@ typedef struct node{
 void display(node *head);
 void delBegin(node **head);
 void delEnd(node *head);
+void delPos(node* head);
 
 int main(){
     node *head = NULL, *newNode, *temp = NULL;
@@ -36,6 +37,9 @@ int main(){
         printf("add more? (0/1): ");
         scanf("%d", &choice);
     }
+    display(head);
+    printf("\n");
+    delPos(head);
     display(head);
     return 0;
 }
@@ -77,4 +81,25 @@ void delEnd(node *head){
     prev->next = NULL;
 
     free(temp);   
+}
+
+void delPos(node * head){
+    node *temp, *prev, *upc;
+    int i = 0, pos;  
+
+    printf("Please enter the pos to delete: ");
+    scanf("%d", &pos);
+    
+    temp = head;
+    while(i < pos){
+        prev = temp;
+        temp = temp->next;
+        i++;
+    }
+    upc = temp->next;
+
+    prev->next = temp->next;
+    upc->prev = prev;
+
+    free(temp);
 }
